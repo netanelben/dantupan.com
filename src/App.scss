@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    h1 {
+        margin-bottom: 5%;
+        letter-spacing: 13px;
+    }
+}
+
+.section {
+    border: 10px dashed crimson;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 15px;
+}

@@ -1,41 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { request } from 'graphql-request';
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
+import { ImageGallery, MusicVideos, Community } from './sections';
 
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.scss';
 
-function App() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const { products } = await request(
-        'https://api-eu-central-1.graphcms.com/v2/ckewufzipreh401z44gdveemi/master',
-        `
-          {
-            products {
-              printfulProductId
-              name
-            }
-          }
-        `
-      );
-
-      setProducts(products);
-    };
-
-    fetchProducts();
-  }, []);
-
-  return (
-    <div className="App">
-      <header className="">
-        Products:
-        {products.map(prod => (
-          <div>{prod.name}</div>
-        ))}
-      </header>
+const App = () => (
+    <div className="main">
+        <h1>thetupan</h1>
+        <Container fluid>
+            <Row>
+                <Col sm="12" md="4">
+                    <ImageGallery/>
+                </Col>
+                <Col sm="12" md="4">
+                    <MusicVideos/>
+                </Col>
+                <Col sm="12" md="4">
+                    <Community/>
+                </Col>
+            </Row>
+        </Container>
     </div>
-  );
-}
+);
 
 export default App;

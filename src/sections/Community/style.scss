@@ -1,0 +1,24 @@
+.postitem {
+    &:not(:last-of-type) {
+        margin-bottom: 20px;
+        border-bottom: 1px solid sandybrown;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        b {
+            letter-spacing: 2.8px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
+
+    p {
+        padding-top: 20px;
+    }
+}
