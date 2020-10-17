@@ -8,7 +8,7 @@ const images = [
 const ImageGallery = () => (
     <div className="section gallery">
         {images.map(image => (
-            <img src={image}/>
+            <img src={image} alt="image"/>
         ))}
     </div>
 );

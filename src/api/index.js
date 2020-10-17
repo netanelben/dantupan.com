@@ -21,3 +21,18 @@ export const fetchPosts = async (setPosts) => {
 
     setPosts(posts);
 };
+
+export const fetchVideo = async (setVideos) => {
+    const { posts } = await request(
+        API_URL,
+        `
+            {
+                posts {
+                    videoUrl
+                }
+            }
+        `
+    );
+
+    setVideos(posts);
+};
