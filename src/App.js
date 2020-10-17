@@ -1,23 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { request } from 'graphql-request';
+
 import './App.css';
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { products } = await request(
+        'https://api-eu-central-1.graphcms.com/v2/ckewufzipreh401z44gdveemi/master',
+        `
+          {
+            products {
+              printfulProductId
+              name
+            }
+          }
+        `
+      );
+
+      setProducts(products);
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="">
+        Products:
+        {products.map(prod => (
+          <div>{prod.name}</div>
+        ))}
       </header>
     </div>
   );
