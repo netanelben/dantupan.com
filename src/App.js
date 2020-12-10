@@ -8,7 +8,7 @@ import './App.scss';
 const App = () => (
     <div className="main">
         <h1 style={{ fontSize: '58px' }}>Dan Tupan</h1>
-        <iframe
+        <iframe title="soundcloud"
             allowTransparency="true"
             scrolling="no" frameBorder="no"
             src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fuser-446627522&color=white_orange&size=64"
