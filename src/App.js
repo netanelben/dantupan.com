@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import { ImageGallery, MusicVideos, Community } from './sections';
+// import { Container, Row, Col } from 'reactstrap';
+// import { ImageGallery, MusicVideos, Community } from './sections';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
